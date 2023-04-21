@@ -1,47 +1,47 @@
-import React, { useState } from "react";
+import React,{Component} from "react";
+import './App.css'
 
-function Todo() {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
 
-  const handleChange = (event) => {
-    setNewTask(event.target.value);
-  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setTasks([...tasks, { title: newTask, completed: false }]);
-    setNewTask("");
-  };
-
-  const handleComplete = (index) => {
-    const newTasks = [...tasks];
-    newTasks[index].completed = true;
-    setTasks(newTasks);
-  };
-
-  const handleDelete = (index) => {
-    const newTasks = [...tasks];
-    newTasks.splice(index, 1);
-    setTasks(newTasks);
-  };
-
+function App() {
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={newTask} onChange={handleChange} />
-        <button type="submit">Add</button>
-      </form>
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>
-            {task.title} {!task.completed && <button onClick={() => handleComplete(index)}>Complete</button>}
-            <button onClick={() => handleDelete(index)}>Delete</button>
+    <div className="todo-container">
+      <div className="todo-wrap">
+        <div className="todo-header">
+          <input type="text" placeholder="请输入你的任务，并按回车键确认" />
+        </div>
+        <ul className="todo-main">
+          <li>
+            <label>
+              <input type="checkbox" />
+              <span>xxx</span>
+            </label>
+            <button className="btn btn-danger" style={{ display: "none" }}>
+              删除
+            </button>
           </li>
-        ))}
-      </ul>
+          <li>
+            <label>
+              <input type="checkbox" />
+              <span>xxx</span>
+            </label>
+            <button className="btn btn-danger" style={{ display: "none" }}>
+              删除
+            </button>
+          </li>
+        </ul>
+        <div className="todo-footer">
+          <label>
+            <input type="checkbox"/>
+          </label>
+          <span>
+            <span>已完成0</span>/全部2
+          </span>
+          <button className="btn btn-danger">清除已完成的任务 </button>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default Todo;
+export default App;
