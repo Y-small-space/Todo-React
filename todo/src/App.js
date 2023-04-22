@@ -1,44 +1,15 @@
-import React,{Component} from "react";
 import './App.css'
-
-
+import Header from'./components/Header/header'
+import Footer from './components/Footer/footer';
+import Item from './components/Item/item';
 
 function App() {
   return (
     <div className="todo-container">
       <div className="todo-wrap">
-        <div className="todo-header">
-          <input type="text" placeholder="请输入你的任务，并按回车键确认" />
-        </div>
-        <ul className="todo-main">
-          <li>
-            <label>
-              <input type="checkbox" />
-              <span>xxx</span>
-            </label>
-            <button className="btn btn-danger" style={{ display: "none" }}>
-              删除
-            </button>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" />
-              <span>xxx</span>
-            </label>
-            <button className="btn btn-danger" style={{ display: "none" }}>
-              删除
-            </button>
-          </li>
-        </ul>
-        <div className="todo-footer">
-          <label>
-            <input type="checkbox"/>
-          </label>
-          <span>
-            <span>已完成0</span>/全部2
-          </span>
-          <button className="btn btn-danger">清除已完成的任务 </button>
-        </div>
+        <Header/>
+        <Item/>
+        <Footer/>
       </div>
     </div>
   );
