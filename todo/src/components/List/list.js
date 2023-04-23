@@ -1,20 +1,15 @@
 import React from "react";
+import Item from "../Item/item";
 import './index.css'
 
-export default function List() {
+export default function List(props) {
+  const {todos} = props 
+
   return (
-    <div>
-      <ul className="todo-main">
-        <li>
-          <label>
-            <input type="checkbox" />
-            <span>xxx</span>
-          </label>
-          <button className="btn btn-danger" style={{ display: "none" }}>
-            删除
-          </button>
-        </li>
-      </ul>
-    </div>
+    <ul className="todo-main">
+      { todos.map((todo)=>{
+          return <Item key={todo.id} id={todo.id} name={todo.name} done={todo.done}/>
+      })}
+    </ul>
   );
 }

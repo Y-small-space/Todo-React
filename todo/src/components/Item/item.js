@@ -1,12 +1,22 @@
 import React from "react";
-import List from "../List/list";
 import './index.css'
 
-export default function item() {
+export default function Item(props) {
+  const {name} = props
+ 
   return (
     <div>
-      <List />
-      <List />
-    </div>
+      <ul className="todo-main">
+        <li>
+          <label>
+            <input type="checkbox" />
+            <span>{name}</span>
+          </label>
+          <button className="btn btn-danger" style={{ display: "none" }}>
+            删除
+          </button>
+        </li>
+      </ul>
+    </div> 
   );
 }
