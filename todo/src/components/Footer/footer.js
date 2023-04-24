@@ -3,6 +3,7 @@ import './index.css'
 
 export default function Footer(props) {
   const {todos} = props;
+  
   //已完成个数
   const donecount = todos.reduce((pre,todo)=>{
     return pre+(todo.done?1:0)
