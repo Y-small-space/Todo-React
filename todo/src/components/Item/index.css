@@ -18,13 +18,17 @@ li label li input{
     top: -1px;
 }
 li button{
-    float: left;
+    float: right;
     display: none;
     margin-top: 3px;
+    margin-right: 5px;
 }
 li:before{
     content: initial;
 }
 li:last-child{
     border-bottom: none;
+}
+.grey{
+    background-color: #ddd;
 }
