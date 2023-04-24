@@ -21,10 +21,11 @@ export default function Item(props) {
       props.deleteTodo(id);
     }
   }
+  
   return (
     <li style={{backgroundColor:state.mouse ? 'grey' : ''}} onMouseEnter={()=>hanleMouse(true)} onMouseLeave={()=>hanleMouse(false)}>
       <label>
-        <input type="checkbox" defaultChecked={done} onChange={(event)=>handleCheck(id,event)}/>
+        <input type="checkbox" checked={done} onChange={(event)=>handleCheck(id,event)}/>
         <span>{name}</span>
       </label>
       <button onClick={()=>{handleDelete(id)}} className="btn btn-danger" style={{ display:state.mouse?"block":"none" }}>
