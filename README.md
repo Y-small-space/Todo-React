@@ -1,7 +1,7 @@
 # Todo-React
 一个练习React的小东西
 
-# —、todoList案例相关知识点
+## —、todoList案例相关知识点
 1.拆分组件、实现静态组件，注意:className 、style的写法
 
 2.动态初始化列表，如何确定将数据放在哪个组件的state中？
